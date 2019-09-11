@@ -32,7 +32,7 @@
 }
 
 body {
-    padding-top: 80px;
+
     font-size: 12px;
     color: #34495e;
     background: #f5f5f5
@@ -927,5 +927,32 @@ ul.faq li>div h3 {
 @media screen and (max-width: 760px) {
     #bottom, #footer{
         text-align: center;
+    }
+    .sl-slide-inner div h2 {
+        font-size: 30px;
+    }
+    .sl-slide-inner div {
+        padding: 10% 10%;
+    }
+    .sl-slide-inner div a {
+        font-size: 20px;
+    }
+    .sl-slide .sl-slide-inner img {
+        width: 70%;
+    }
+    #firstsection {
+        margin-top: 0px !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .sl-slide-inner div h2 {
+        font-size: 40px;
+    }
+    .sl-slide-inner div {
+        padding: 10% 10%;
+    }
+    #firstsection {
+        margin-top: 0px !important;
     }
 }
