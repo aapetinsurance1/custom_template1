@@ -67,63 +67,66 @@
         </div>
     </header>
     <!-- /header -->
-    <section>
+
+    <section id="firstsection" style="margin-top: 100px;">
         <div class="container">
-            <i style="font-family: Arial, Helvetica, sans-serif; font-size: 20px; color: #4EA3C8;">Making Vet Care Accessible</i>
-            <div class="container" style="background-color: #60C9F8; padding: 30px;">
-                <div class="row">
-                    <div class="span6">
-                        <div class="col-lg-6 col-lg-offset-3 text-left" style="margin-top: 20%; margin-left: 10%;">
-                            <h1 style="color: white;">Best Insurance for Your Dog</h2>
-                            <a class="btn btn-large btn-transparent" style="margin-top: 5%; margin-bottom: 5%;" href="#">Learn More</a>
-                        </div>
-                        
-                    </div>
-                    <div class="span6">
-                        <img src="images/dog.jpg" alt="" />
-                    </div>
-                </div>
-            </div>
-        </div>  
+            <i style="font-family: Arial, Helvetica, sans-serif; font-size: 20px; color: #4EA3C8; margin-top: 200px'">Making Vet Care Accessible</i>
+        </div>
     </section>
 
-    <section>
-        <div class="container">
-            <div class="container" style="background-color: #41B29D; padding: 30px;">
-                <div class="row">
-                    <div class="span6">
-                        <div class="col-lg-6 col-lg-offset-3 text-left" style="margin-top: 25%; margin-left: 10%;">
-                            <h1 style="color: white;">Best Insurance for Your Cat</h1>
-                            <a class="btn btn-large btn-transparent" style="margin-top: 5%; margin-bottom: 5%;" href="#">Learn More</a>
+        <!--Slider-->
+    <section id="slide-show">
+        <div id="slider" class="sl-slider-wrapper">
+            <!--Slider Items-->    
+            <div class="sl-slider">
+                <!--Slider Item1-->
+                <div class="sl-slide item1" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+                    <div class="sl-slide-inner">
+                        <div class="container">
+                            <img class="pull-right" width="50%" style="padding-top: 5%;"  src="images/dog2.jpg" alt="" />
+                            <h2>Best Insurance for Your Dog</h2>
+                            <br>
+                            <a class="btn btn-large btn-transparent" href="#">Learn More</a>
                         </div>
-                        
-                    </div>
-                    <div class="span6">
-                        <img src="images/cat.jpg" alt="" />
                     </div>
                 </div>
-            </div>
-        </div>  
-    </section>
-
-    <section>
-        <div class="container">
-            <div class="container" style="background-color: #2E7394; padding: 30px;">
-                <div class="row">
-                    <div class="span6">
-                        <div class="col-lg-6 col-lg-offset-3 text-left" style="margin-top: 10%; margin-left: 10%;">
-                            <h1 style="color: white;">Pet Insurance that meets your needs</h1>
-                            <a class="btn btn-large btn-transparent" style="margin-top: 5%; margin-bottom: 5%;" href="#">Learn More</a>
+                <!--/Slider Item1-->
+                <!--Slider Item2-->
+                <div class="sl-slide item2" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+                    <div class="sl-slide-inner">
+                        <div class="container">
+                            <img class="pull-right" width="50%"   src="images/cat2.jpg" alt="" />
+                            <h2>Best Insurance for Your Cat</h2>
+                            <br>
+                            <a class="btn btn-large btn-transparent" href="#">Learn More</a>
                         </div>
-                        
-                    </div>
-                    <div class="span6">
-                        <img src="images/dog_cat.jpg" alt="" />
                     </div>
                 </div>
+                <!--Slider Item2-->
+                <!--Slider Item3-->
+                <div class="sl-slide item3" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+                    <div class="sl-slide-inner">
+                        <div class="container">
+                            <img class="pull-right" width="50%" style="padding-top: 10%;"  src="images/dog_cat2.jpg" alt="" />
+                            <h2>Pet Insurance that meets your needs</h2>
+                            <br>
+                            <a class="btn btn-large btn-transparent" href="#">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Slider Item3-->
             </div>
-        </div>  
+            <!--/Slider Items-->
+            <!--Slider Next Prev button-->
+            <nav id="nav-arrows" class="nav-arrows">
+                <span class="nav-arrow-prev"><i class="icon-angle-left"></i></span>
+                <span class="nav-arrow-next"><i class="icon-angle-right"></i></span> 
+            </nav>
+            <!--/Slider Next Prev button-->
+        </div>
+        <!-- /slider-wrapper -->           
     </section>
+    <!--/Slider-->
 
     <section>
         <div class="container">
@@ -204,11 +207,37 @@
         </div>
     </footer>
     <!--/Footer-->
-
     <script src="js/vendor/jquery-1.9.1.min.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/jquery.ba-cond.min.js"></script>
     <script src="js/jquery.slitslider.js"></script>
+        <!-- Slider -->
+    <script type="text/javascript"> 
+    $(function() {
+        var Page = (function() {
+            var $navArrows = $( '#nav-arrows' ),
+            slitslider = $( '#slider' ).slitslider( {
+                autoplay : true
+            } ),
+            init = function() {
+                initEvents();
+            },
+            initEvents = function() {
+                $navArrows.children( ':last' ).on( 'click', function() {
+                    slitslider.next();
+                    return false;
+                });
+                $navArrows.children( ':first' ).on( 'click', function() {
+                    slitslider.previous();
+                    return false;
+                });
+            };
+            return { init : init };
+        })();
+        Page.init();
+    });
+    </script>
+    <!-- /Slider -->
 </body>
 </html>
