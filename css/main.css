@@ -116,14 +116,6 @@ a:focus {
     min-width: 180px
 }
 
-body>section {
-    padding: 50px 0
-}
-
-body>section#slide-show {
-    padding: 0
-}
-
 #recent-works {
     background: #2dcc70;
     color: #fff
@@ -923,8 +915,32 @@ ul.faq li>div h3 {
 #HR a:hover {
     color: #FFF
 }
+
+#firstsection {
+    position: fixed;
+    top: 80px;
+    width: 100%;
+    padding: 0;
+}
+#firstsection .container {
+    text-align: right;
+    padding-right: 40px;
+}
+#bottom {
+    padding: 50px 0;
+}
+#action_ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, max-content);
+    grid-gap: 2px;
+    margin: 0;
+}
+#action_ul a {
+    font-weight: bold;
+}
 /* Media Queries */
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 767px) {
     #bottom, #footer{
         text-align: center;
     }
@@ -941,11 +957,22 @@ ul.faq li>div h3 {
         width: 70%;
     }
     #firstsection {
-        margin-top: 0px !important;
+        display: none;
+    }
+    #pet_img {
+        display: none;
+    }
+    #action_ul {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    }
+    #action_ul a {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 8px;
     }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 992px) {
     .sl-slide-inner div h2 {
         font-size: 40px;
     }
@@ -953,6 +980,13 @@ ul.faq li>div h3 {
         padding: 10% 10%;
     }
     #firstsection {
-        margin-top: 0px !important;
+        position: absolute;
+    }
+}
+
+@media (min-width: 992px) {
+    #slide-show,
+    #secondsection {
+        margin-top: 120px;
     }
 }
