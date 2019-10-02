@@ -116,6 +116,10 @@ a:focus {
     min-width: 180px
 }
 
+.dropdown-backdrop {
+    display: none !important;
+}
+
 #recent-works {
     background: #2dcc70;
     color: #fff
